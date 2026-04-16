@@ -1,0 +1,159 @@
+/* ─────────────────────────────────────────
+   FILTER BAR  –  horizontal chip style
+───────────────────────────────────────── */
+
+.filter-bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-inner {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filter-inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* Inline search */
+.filter-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 34px;
+  gap: 6px;
+  background: #f9f9f9;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.filter-search:focus-within {
+  border-color: var(--accent);
+  background: var(--bg-surface);
+}
+
+.fsearch-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.filter-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  background: transparent;
+  width: 160px;
+  color: #333;
+}
+
+.filter-input::placeholder {
+  color: #bbb;
+}
+
+.fclear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.fclear-btn:hover {
+  color: #333;
+}
+
+.fsubmit-btn {
+  background: var(--accent);
+  color: var(--bg-surface);
+  border: none;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.fsubmit-btn:hover {
+  background: #1a68e0;
+}
+
+/* Divider */
+.filter-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* Category chips */
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  padding: 5px 16px;
+  height: 34px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-surface);
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip.active {
+  background: var(--accent);
+  color: var(--bg-surface);
+  border-color: var(--accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .filter-inner {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .filter-input {
+    width: 120px;
+  }
+
+  .chip {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+}

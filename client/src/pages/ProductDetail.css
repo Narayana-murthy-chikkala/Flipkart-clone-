@@ -1,0 +1,518 @@
+/* Flipkart Premium Product Detail CSS */
+
+.fk-detail-wrapper {
+  background-color: #f1f3f6;
+  min-height: calc(100vh - 80px);
+  padding: 16px 0;
+}
+
+.fk-detail-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: white;
+  display: flex;
+  min-height: 800px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.16);
+}
+
+/* Left Column: Images & Sticky Actions */
+.fk-detail-left {
+  width: 40%;
+  padding: 16px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.fk-sticky-images {
+  position: sticky;
+  top: 96px;
+}
+
+.fk-images-layout {
+  display: flex;
+  gap: 12px;
+  height: 448px;
+  margin-bottom: 16px;
+}
+
+/* Thumbnails Column */
+.fk-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 64px;
+}
+
+.fk-thumb {
+  width: 64px;
+  height: 64px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fk-thumb.active {
+  border-color: #2874f0;
+  border-width: 2px;
+}
+
+.fk-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-contain: contain;
+}
+
+/* Main Viewer */
+.fk-main-viewer {
+  flex: 1;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fk-main-viewer img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.fk-viewer-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fk-action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #c2c2c2;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+}
+
+.fk-action-icon:hover {
+  color: #ff6161;
+}
+
+/* Action Buttons */
+.fk-main-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.fk-btn-cart-premium, .fk-btn-buy-premium {
+  flex: 1;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px; /* Softer radius matching new screenshot */
+  cursor: pointer;
+  text-transform: none; /* Removed uppercase to match Add to cart */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.fk-btn-cart-premium {
+  background: #ffffff;
+  color: #212121;
+  border: 1px solid #e0e0e0;
+}
+
+.fk-btn-cart-premium:hover {
+  border-color: #c2c2c2;
+}
+
+.fk-btn-buy-premium {
+  background: #ffc200;
+  color: #212121;
+  border: 1px solid #ffc200;
+}
+
+.fk-btn-buy-premium.notify {
+  background: #2874f0;
+  color: white;
+  border-color: #2874f0;
+}
+
+/* Right Column: Content */
+.fk-detail-right {
+  flex: 1;
+  padding: 24px 30px;
+}
+
+.fk-breadcrumbs-modern {
+  font-size: 12px;
+  color: #878787;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.fk-breadcrumbs-modern a {
+  text-decoration: none;
+  color: #878787;
+}
+
+.fk-breadcrumbs-modern a:hover {
+  color: #2874f0;
+}
+
+.fk-brand-link {
+  font-size: 14px;
+  color: #2874f0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.fk-product-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #212121;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.fk-rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.fk-stars {
+  background: #388e3c;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fk-count {
+  font-size: 14px;
+  color: #878787;
+  font-weight: 500;
+}
+
+.fk-assured {
+  height: 21px;
+}
+
+/* Pricing */
+.fk-price-section {
+  margin-bottom: 24px;
+}
+
+.fk-hot-deal {
+  background: #388e3c;
+  color: white;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.fk-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.fk-price-discount {
+  color: #388e3c;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.fk-price-discount .arrow {
+  font-size: 20px;
+}
+
+.fk-price-mrp {
+  font-size: 16px;
+  color: #878787;
+  text-decoration: line-through;
+}
+
+.fk-price-final {
+  font-size: 28px;
+  font-weight: 500;
+  color: #212121;
+}
+
+.fk-tax-info {
+  font-size: 12px;
+  color: #212121;
+  margin-top: 4px;
+}
+
+/* Size Selection */
+.fk-size-section {
+  margin-bottom: 30px;
+}
+
+.fk-size-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.fk-size-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+}
+
+.fk-size-chart {
+  font-size: 14px;
+  color: #2874f0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fk-size-options {
+  display: flex;
+  gap: 12px;
+}
+
+.fk-size-box {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.fk-size-box:hover {
+  border-color: #2874f0;
+}
+
+.fk-size-box.selected {
+  border-color: #2874f0;
+  background: #f1f3f6;
+  font-weight: 600;
+}
+
+/* Offers Card (Premium Blue) */
+.fk-offers-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.fk-offer-header {
+  background: #008ece;
+  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fk-offer-content {
+  background: #f1f8ff;
+  padding: 16px;
+}
+
+.fk-buy-now-box {
+  font-size: 18px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 16px;
+}
+
+.fk-buy-now-box .highlight {
+  font-weight: 700;
+}
+
+.fk-bank-offers-title {
+  font-size: 12px;
+  color: #878787;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fk-bank-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fk-bank-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fk-bank-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-bank-info .val {
+  font-size: 14px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.fk-bank-info .sub {
+  font-size: 12px;
+  color: #878787;
+}
+
+.fk-apply-btn {
+  color: #2874f0;
+  font-size: 14px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Features */
+.fk-features {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 24px;
+}
+
+.fk-feature-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.fk-f-label {
+  width: 110px;
+  font-size: 14px;
+  color: #878787;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.fk-f-value {
+  flex: 1;
+  font-size: 14px;
+  color: #212121;
+}
+
+.fk-f-value .bold {
+  font-weight: 600;
+}
+
+.fk-f-value .free {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.fk-f-value .strike {
+  text-decoration: line-through;
+  color: #878787;
+}
+
+.fk-bullet-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.fk-bullet-list li {
+  margin-bottom: 6px;
+}
+
+.seller-name {
+  color: #2874f0;
+  font-weight: 600;
+}
+
+.seller-rating {
+  background: #2874f0;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+/* Utils */
+.fk-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 16px;
+  color: #878787;
+}
+
+.fk-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2874f0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .fk-detail-container {
+    flex-direction: column;
+  }
+  .fk-detail-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .fk-detail-right {
+    width: 100%;
+  }
+  .fk-sticky-images {
+    position: static;
+  }
+  .fk-bank-grid {
+    grid-template-columns: 1fr;
+  }
+}

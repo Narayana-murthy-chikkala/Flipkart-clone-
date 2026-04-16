@@ -1,0 +1,454 @@
+/* ============================================================
+   Flipkart-Themed Order Success / Confirmation Page
+   ============================================================ */
+
+   .fk-os-page {
+    background: #f1f3f6;
+    min-height: calc(100vh - 80px);
+    padding-bottom: 48px;
+  }
+  
+  /* ---- Loading ---- */
+  .fk-os-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    gap: 16px;
+    color: #878787;
+    font-size: 16px;
+  }
+  .fk-os-spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #e9ecef;
+    border-top-color: #2874f0;
+    border-radius: 50%;
+    animation: fkOsSpin 0.8s linear infinite;
+  }
+  @keyframes fkOsSpin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* ---- Error ---- */
+  .fk-os-error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 16px;
+    text-align: center;
+    padding: 20px;
+  }
+  .fk-os-error-page img {
+    width: 200px;
+    opacity: 0.6;
+  }
+  .fk-os-error-page h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #212121;
+  }
+  .fk-os-error-page p {
+    color: #878787;
+    font-size: 14px;
+  }
+  .fk-os-shop-btn {
+    background: #2874f0;
+    color: white;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  .fk-os-shop-btn:hover { background: #1a5ec8; }
+  
+  /* ---- Top Green Banner ---- */
+  .fk-os-top-banner {
+    background: #388e3c;
+    padding: 20px 0;
+  }
+  .fk-os-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .fk-os-check-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fk-os-banner-text h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .fk-os-banner-text p {
+    color: rgba(255,255,255,0.88);
+    font-size: 14px;
+    margin: 0;
+  }
+  .fk-os-banner-text strong {
+    font-weight: 700;
+  }
+  
+  /* ---- Layout ---- */
+  .fk-os-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+  .fk-os-main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* ---- Card ---- */
+  .fk-os-card {
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 24px;
+  }
+  .fk-os-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212121;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .fk-os-items-count {
+    font-size: 14px;
+    font-weight: 400;
+    color: #878787;
+  }
+  
+  /* ---- Meta Card ---- */
+  .fk-os-meta-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .fk-os-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .fk-os-meta-label {
+    font-size: 12px;
+    color: #878787;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .fk-os-meta-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #212121;
+  }
+  .order-id-mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: #2874f0;
+    word-break: break-all;
+  }
+  .fk-os-status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    width: fit-content;
+  }
+  .fk-os-status-badge.status-pending {
+    background: #fff8e1;
+    color: #f57c00;
+  }
+  .fk-os-status-badge.status-confirmed {
+    background: #e8f5e9;
+    color: #388e3c;
+  }
+  .fk-os-status-badge.status-processing {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+  .fk-os-status-badge.status-shipped {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+  .fk-os-status-badge.status-delivered {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  /* ---- Timeline ---- */
+  .fk-os-timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .fk-os-timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+  .fk-os-step-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 3px solid #e0e0e0;
+    transition: all 0.3s;
+  }
+  .fk-os-step-dot.active {
+    background: #388e3c;
+    border-color: #388e3c;
+    box-shadow: 0 0 0 4px rgba(56,142,60,0.15);
+  }
+  .fk-os-step-dot.target {
+    background: white;
+    border: 3px solid #2874f0;
+  }
+  .fk-os-step-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+  }
+  .step-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #212121;
+  }
+  .step-date {
+    font-size: 11px;
+    color: #878787;
+  }
+  .fk-os-timeline-line {
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    margin-top: -30px;
+  }
+  
+  /* ---- Items List ---- */
+  .fk-os-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .fk-os-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 12px;
+  }
+  .fk-os-item-row:last-child {
+    border-bottom: none;
+  }
+  .fk-os-item-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+  }
+  .fk-os-item-qty-badge {
+    background: #f0f0f0;
+    color: #212121;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .fk-os-item-name {
+    font-size: 14px;
+    color: #212121;
+    line-height: 1.4;
+  }
+  .fk-os-item-price-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+  .fk-os-item-unit {
+    font-size: 12px;
+    color: #878787;
+  }
+  .fk-os-item-total {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212121;
+  }
+  .fk-os-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0 0;
+    margin-top: 8px;
+    border-top: 2px solid #f0f0f0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #212121;
+  }
+  .fk-os-total-amount {
+    font-size: 20px;
+    color: #212121;
+  }
+  
+  /* ---- Address ---- */
+  .fk-os-address-box {
+    background: #f9f9f9;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    padding: 16px;
+  }
+  .fk-os-addr-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212121;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .fk-os-addr-phone {
+    font-size: 14px;
+    font-weight: 400;
+    color: #878787;
+  }
+  .fk-os-addr-text {
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0 0 6px;
+  }
+  .fk-os-addr-email {
+    font-size: 13px;
+    color: #878787;
+    margin: 0;
+  }
+  
+  /* ---- Info Banner ---- */
+  .fk-os-info-banner {
+    background: #fff8e1;
+    border-left: 4px solid #ff9f00;
+    border-radius: 2px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .fk-os-info-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .fk-os-info-banner p {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* ---- Actions ---- */
+  .fk-os-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding-top: 8px;
+  }
+  .fk-os-continue-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #fb641b;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+  .fk-os-continue-btn:hover { background: #e0570f; }
+  .fk-os-orders-btn {
+    padding: 14px 40px;
+    background: white;
+    color: #2874f0;
+    border: 1px solid #2874f0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+  .fk-os-orders-btn:hover {
+    background: #f0f6ff;
+  }
+  
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .fk-os-meta-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .fk-os-timeline {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .fk-os-timeline-step {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+    .fk-os-step-info {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .fk-os-timeline-line {
+      width: 2px;
+      height: 20px;
+      margin: 0 0 0 11px;
+    }
+    .fk-os-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .fk-os-continue-btn, .fk-os-orders-btn {
+      text-align: center;
+    }
+    .fk-os-item-row {
+      flex-direction: column;
+    }
+    .fk-os-item-price-col {
+      align-items: flex-start;
+      margin-left: 36px;
+    }
+  }

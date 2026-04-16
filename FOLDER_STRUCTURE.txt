@@ -1,0 +1,127 @@
+Flipkart Clone Directory Structure\n\n|-- DATABASE_SCHEMA.sql
+|-- FILE_STRUCTURE.md
+|-- FOLDER_STRUCTURE.txt
+|-- QUICK_REFERENCE.md
+|-- README.md
+|-- SETUP_GUIDE.md
+|-- client
+|   |-- .env
+|   |-- .gitignore
+|   |-- index.html
+|   |-- package.json
+|   |-- src
+|   |   |-- App.css
+|   |   |-- App.jsx
+|   |   |-- components
+|   |   |   |-- Carousel.css
+|   |   |   |-- Carousel.jsx
+|   |   |   |-- CategoryNav.jsx
+|   |   |   |-- FilterSidebar.css
+|   |   |   |-- FilterSidebar.jsx
+|   |   |   |-- Footer.css
+|   |   |   |-- Footer.jsx
+|   |   |   |-- HeroBanner.jsx
+|   |   |   |-- Navbar.css
+|   |   |   |-- Navbar.jsx
+|   |   |   |-- ProductCard.css
+|   |   |   |-- ProductCard.jsx
+|   |   |   |-- SearchBar.css
+|   |   |   |-- SearchBar.jsx
+|   |   |   |-- SortBar.jsx
+|   |   |   |-- Toast.jsx
+|   |   |   -- TopFilters.jsx
+|   |   |-- index.css
+|   |   |-- main.jsx
+|   |   |-- pages
+|   |   |   |-- Cart.css
+|   |   |   |-- Cart.jsx
+|   |   |   |-- Checkout.css
+|   |   |   |-- Checkout.jsx
+|   |   |   |-- Dashboard.css
+|   |   |   |-- Dashboard.jsx
+|   |   |   |-- Home.css
+|   |   |   |-- Home.jsx
+|   |   |   |-- Login.css
+|   |   |   |-- Login.jsx
+|   |   |   |-- OrderSuccess.css
+|   |   |   |-- OrderSuccess.jsx
+|   |   |   |-- ProductDetail.css
+|   |   |   |-- ProductDetail.jsx
+|   |   |   |-- SearchResults.jsx
+|   |   |   -- Signup.jsx
+|   |   |-- redux
+|   |   |   |-- authSlice.js
+|   |   |   |-- cartSlice.js
+|   |   |   |-- productSlice.js
+|   |   |   -- store.js
+|   |   |-- routes
+|   |   |   -- AppRoutes.jsx
+|   |   |-- services
+|   |   |   |-- accountService.js
+|   |   |   |-- addressService.js
+|   |   |   |-- api.js
+|   |   |   |-- cartService.js
+|   |   |   |-- orderService.js
+|   |   |   |-- productService.js
+|   |   |   |-- reviewService.js
+|   |   |   -- wishlistService.js
+|   |   -- utils
+|   |       -- formatPrice.js
+|   -- vite.config.js
+-- server
+    |-- .env
+    |-- .gitignore
+    |-- app.js
+    |-- check_db.js
+    |-- config
+    |   |-- db.js
+    |   -- initDB.js
+    |-- controllers
+    |   |-- accountController.js
+    |   |-- addressController.js
+    |   |-- authController.js
+    |   |-- cartController.js
+    |   |-- orderController.js
+    |   |-- productController.js
+    |   |-- reviewController.js
+    |   -- wishlistController.js
+    |-- db_account_migration.js
+    |-- fix_users_table.js
+    |-- fixpw.js
+    |-- middleware
+    |   |-- authMiddleware.js
+    |   |-- errorMiddleware.js
+    |   -- uploadMiddleware.js
+    |-- models
+    |   |-- cartModel.js
+    |   |-- orderModel.js
+    |   |-- productModel.js
+    |   -- userModel.js
+    |-- package.json
+    |-- routes
+    |   |-- accountRoutes.js
+    |   |-- addressRoutes.js
+    |   |-- authRoutes.js
+    |   |-- cartRoutes.js
+    |   |-- orderRoutes.js
+    |   |-- productRoutes.js
+    |   |-- reviewRoutes.js
+    |   -- wishlistRoutes.js
+    |-- scratch
+    |   |-- checkData.js
+    |   |-- enrichProducts.js
+    |   |-- fixSchema.js
+    |   |-- migrate_payment_columns.js
+    |   -- updateProductSchema.js
+    |-- seed
+    |   -- seedData.js
+    |-- server.js
+    |-- uploads
+    |   -- pan
+    |       |-- pan_image-1776280138099-341313730.jpg
+    |       |-- pan_image-1776281230090-514485147.jpeg
+    |       |-- pan_image-1776281688551-67294687.jpeg
+    |       -- pan_image-1776320572861-670174455.jpeg
+    -- utils
+        |-- generateOrderId.js
+        -- sendEmail.js
