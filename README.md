@@ -14,7 +14,6 @@ A pixel-perfect, high-performance Flipkart clone built with the modern MERN (MyS
 > The remote **MySQL Database** is currently hosted on **Railway**. 
 > - **Trial Status:** The current instance is part of a **30-day trial period**.
 > - **Availability:** After the 30-day window, the database will transition to a **paid tier**. If not upgraded, the database instance will be suspended, and the app will require a new database connection.
-> - **Action:** For long-term availability, consider migrating to a permanent hosting solution or upgrading the Railway plan.
 
 ---
 
