@@ -1,98 +1,202 @@
-# Flipkart Clone - E-commerce Platform
+# 🛒 Flipkart Clone - Full-Stack E-commerce Platform
 
-A comprehensive, full-stack, responsive e-commerce platform built heavily mirroring the **Flipkart** visual identity and functionality. This project involves a fully-featured Node.js/Express.js backend utilizing MySQL, and a React.js client interface with Redux Toolkit for global state management.
+[![Vercel Deployment](https://img.shields.io/badge/Frontend-Vercel-black?style=flat-square&logo=vercel)](https://flipkart-clone-sigma-six.vercel.app)
+[![Render Deployment](https://img.shields.io/badge/Backend-Render-46E3B7?style=flat-square&logo=render)](https://flipkart-clone-0mut.onrender.com)
+[![Railway Database](https://img.shields.io/badge/Database-Railway-0B0D0E?style=flat-square&logo=railway)](https://railway.app)
 
-## 🚀 Tech Stack Used
-
-### Frontend
-- **React.js** (Vite build setup)
-- **Redux Toolkit** (Global state management: cart, auth, products)
-- **CSS / Tailwind** (Custom CSS modeling the unique Flipkart theme along with Tailwind utilities)
-- **Axios** (Service-based API requests)
-- **React Router v6** (Dynamic routing)
-- **Lucide React** (Vector icons)
-
-### Backend
-- **Node.js & Express.js**
-- **MySQL2** (Relational Database)
-- **Bcrypt.js** (Password hashing)
-- **JWT (JSON Web Tokens)** (Authentication and authorization)
-- **Nodemailer** (Sending Ethereal/SMTP email notifications upon order creation)
-- **Multer** (For handling form-data and document uploads e.g. PAN cards)
+A pixel-perfect, high-performance Flipkart clone built with the modern MERN (MySQL, Express, React, Node) architecture. This application replicates the authentic user experience of India's leading e-commerce giant, focusing on visual fidelity and robust functional logic.
 
 ---
 
-## 🛠️ Setup Instructions
+## ⚠️ Important Database Notice
 
-### 1. Prerequisites
-- [Node.js](https://nodejs.org/en/) installed on your local machine (v16.0+ recommended)
-- [MySQL](https://www.mysql.com/) database server installed and running
+> [!IMPORTANT]
+> The remote **MySQL Database** is currently hosted on **Railway**. 
+> - **Trial Status:** The current instance is part of a **30-day trial period**.
+> - **Availability:** After the 30-day window, the database will transition to a **paid tier**. If not upgraded, the database instance will be suspended, and the app will require a new database connection.
+> - **Action:** For long-term availability, consider migrating to a permanent hosting solution or upgrading the Railway plan.
 
-### 2. Environment Configurations
-In the `server` directory, create a `.env` file (or adjust the existing one) with the following structure:
-```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=ecommerce
-SERVER_PORT=5000
-NODE_ENV=development
-JWT_SECRET=super_secret_for_flipkart_clone
-JWT_EXPIRES_IN=30d
+---
+
+## 📁 Project Structure
+
+```text
+flipkart_clone/
+├── client/                          # React + Vite Frontend
+│   ├── src/
+│   │   ├── components/              # Reusable UI components (Navbar, Footer, etc.)
+│   │   ├── pages/                   # Application pages (Home, ProductDetail, Cart)
+│   │   ├── redux/                   # Redux Toolkit state management
+│   │   ├── routes/                  # React Router configuration
+│   │   ├── services/                # Axios API services
+│   │   ├── utils/                   # Helper functions
+│   │   ├── App.jsx                  # Main application entry
+│   │   └── main.jsx                 # Vite entry point
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/                          # Express.js Backend
+│   ├── src/
+│   │   ├── config/                  # Database connection (Sequelize/MySQL2)
+│   │   ├── controllers/             # Business logic for Auth, Products, Orders
+│   │   ├── middleware/              # Auth guards & error handlers
+│   │   ├── models/                  # MySQL schema definitions
+│   │   ├── routes/                  # Express API route definitions
+│   │   ├── utils/                   # Utilities (Token, Mailer)
+│   │   └── seed/                    # Database seeder scripts
+│   ├── app.js                       # Express app configuration
+│   ├── server.js                    # Server entry point
+│   └── package.json
+│
+└── README.md
 ```
 
-### 3. Backend Setup
-1. Open a terminal and navigate to the `server` directory:
-   ```bash
-   cd server
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. **Database Seeding:** Automatically generate the required MySQL tables and seed it with realistic mock data:
-   ```bash
-   npm run seed
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   *(Server should now be running on `http://localhost:5000`)*
+---
 
-### 4. Frontend Setup
-1. Open a new terminal and navigate to the `client` directory:
-   ```bash
-   cd client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
-   *(The application will be accessible at `http://localhost:5173`)*
+## ✨ Features
+
+### 🏠 Homepage
+- **Hero Banner Carousel** — Auto-rotating promotional banners.
+- **Category Navigation Bar** — Top-level category strip (Mobiles, Electronics, Fashion, etc.).
+- **Deals of the Day** — Countdown timer with discounted products.
+- **Featured Products** — Curated product carousels.
+- **Multi-section Layout** — Matches Flipkart's real homepage structure.
+
+### 🔍 Product Browsing & Search
+- **Global Search Bar** — Search by product name, brand, or category.
+- **Product Listing Page** — Grid view with detailed product cards.
+- **Advanced Filters** — Filter by Price range, Brand, Rating, and Category.
+- **Sorting Options** — Price low-to-high, high-to-low, and rating.
+
+### 📦 Product Detail Page
+- **Image Carousel** — Main image with interactive thumbnail strip.
+- **Stock Availability** — Real-time stock display with urgency messaging.
+- **Price Display** — MRP with strikethrough, selling price, and discount percentage.
+- **Specifications Table** — Key-value specification table from product data.
+- **Similar Products** — Related items from the same category.
+- **Add to Cart / Buy Now** — Sticky action buttons for quick conversion.
+
+### 🛒 Shopping Cart
+- **Cart Item List** — Product details with quantity management.
+- **Dynamic Pricing** — Real-time updates for totals, discounts, and delivery charges.
+- **Savings Display** — Highlights total amount saved on the order.
+
+### 💳 Checkout
+- **Step Indicator** — Login → Delivery Address → Payment selection.
+- **Inline Address Form** — Add or select shipping addresses directly on the checkout page.
+- **Saved Address Selection** — Quick toggle between previously used addresses.
+- **Place Order Button** — Single-click secure order placement.
+
+### 📧 Email Notifications
+- **Order Confirmation Email** — Automated HTML email sent via **Nodemailer**.
+- **Responsive Template** — Mobile-friendly design with branding and order summaries.
+
+### 👤 User Account
+- **Profile Management** — View and edit personal information.
+- **Address Book** — Full CRUD (Create, Read, Update, Delete) for shipping addresses.
+- **My Orders** — Track past purchases and current order status.
 
 ---
 
-## 🏗️ Core Features & Functionality
-- **Product Listing:** Grid-based product presentation precisely matched with Flipkart's card dimensions, hovering semantics, image fallbacks, and active deal status.
-- **Dynamic Search & Filtration:** Built-in category routing logic. 
-- **Product Detail View:** Complex state carousel, zoomed perspectives, real-item metadata mappings, and accurate pricing offset logic. 
-- **Shopping Cart Mechanics:** Full validation across max purchase bounds (e.g. max 10 per user object limit), dynamic total pricing offsets, delivery thresholds (e.g. Free shipping above ₹500 rule applies organically).
-- **Checkout Process & Order Placements:** Complete validation across addresses before finalizing the internal MySQL representation. 
-- **Order Success Architecture:** Accurate tracking page visually generating the exact checkmark banner and structured timelines found historically inside the authentic Flipkart post-order view.
-- **Global Toast Engine:** Custom-written notification hierarchy avoiding native `alert()` commands.
-- **Wishlist Integration:** Persisted MySQL state mapping user IDs into product arrays, synced directly into the user’s personal `Dashboard`.
-- **E-Receipt Distribution:** Hooked explicitly into an automated backend `nodemailer` service that dynamically issues order summaries at runtime (Testing credentials automatically set up using `Ethereal.email`).
+## 🎨 UI/UX Design
+- **Pixel-Perfect Flipkart UI** — Matches actual design language (colors: #2874f0, #fb641b).
+- **Responsive Design** — Fully adaptive across desktop, tablet, and mobile.
+- **Loading States** — Smooth transitions and loading indicators.
+- **Sticky Elements** — Consistent accessibility via sticky headers and action bars.
 
 ---
 
-## 💡 Assumptions Made
-- **Local Sandbox Execution:** It is assumed this will primarily run on localhost with a direct root access `MySQL` DB (as modeled in `server/config/db.js`). 
-- **Image Accessibility:** The local seeder maps to raw `Unsplash.js` strings. Given the fragile nature of third-party public images, robust `onError` boundary rules trigger strict generic fallback proxies instantly mapping out broken thumbnails organically.
-- **Authentication Bypass on Guest Additions:** The platform assumes users can securely build arrays of cart items offline utilizing local Redux stores implicitly merging into standard Auth headers once `[Authorize / Check Out]` thresholds trigger successfully matching standard SaaS approaches.
-- **Email Dispatching:** It is assumed you are tracking test emails utilizing the dynamically printed Preview URL in the backend console (via `Ethereal.email`) as standard deployment keys (`EMAIL_HOST`/`EMAIL_PASS`) are left generically blank allowing Node.js to spin up mock environments.
+## 🚀 Setup Instructions
+
+### Prerequisites
+| Requirement | Version |
+| :--- | :--- |
+| **Node.js** | 18.x or higher |
+| **MySQL** | 8.x |
+| **npm** | 9.x or higher |
+| **Git** | Latest |
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Narayana-murthy-chikkala/Flipkart-clone-.git
+cd Flipkart-clone-
+```
+
+### Step 2: Setup the Backend
+```bash
+cd server
+npm install
+```
+Create a `.env` file in the `server/` directory:
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# Database Configuration (MySQL)
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=ecommerce
+DB_USER=root
+DB_PASSWORD="your_password"
+
+# JWT Secret
+JWT_SECRET=your_secret_key
+
+# Email Configuration (Nodemailer)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS="your_app_password"
+```
+Initialize and seed the database:
+```bash
+npm run seed
+npm run dev
+# Server runs on http://localhost:5000
+```
+
+### Step 3: Setup the Frontend
+```bash
+cd ../client
+npm install
+npm run dev
+# App runs on http://localhost:5173
+```
+
+---
+
+## 🗄️ Database Design
+- **Relational Modeling** — Normalised schema with Users, Products, Orders, and Addresses.
+- **100+ Seeded Products** — Pre-populated data across multiple categories with real images.
+- **Category Tree** — Multi-level hierarchy (Category → Subcategory).
+
+---
+
+## 🔌 API Endpoints
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| **POST** | `/api/auth/login` | User login & JWT generation |
+| **GET** | `/api/products` | Filtered & paginated product list |
+| **GET** | `/api/cart` | Fetch user's shopping cart |
+| **POST** | `/api/orders` | Place a new order |
+| **DELETE** | `/api/account/addresses/:id` | Remove a shipping address |
+
+---
+
+## 📌 Assumptions & Design Decisions
+- **REST API** — Chose REST architecture for simplicity and scalability.
+- **JWT Authentication** — Stateless token-based security for user sessions.
+- **MySQL Integrity** — Used relational constraints to ensure data consistency.
+- **Image Handling** — Utilizes Unsplash CDN for reliable demo product visuals.
+
+---
+
+## 👨‍💻 Author
+**Narayana Murthy** — GitHub: [@Narayana-murthy-chikkala](https://github.com/Narayana-murthy-chikkala)
+
+---
+
+## 📄 License
+This project is built for educational purposes. It is not affiliated with or endorsed by Flipkart.
