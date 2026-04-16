@@ -37,7 +37,11 @@ app.use(cors({
       'https://flipkart-clone-git-main-narayana-murthys-projects-2c6ee666b.vercel.app',
       'https://flipkart-clone-ih0jeqbtt-narayana-murthys-projects-2c6ee666b.vercel.app'
     ];
-    if (allowedOrigins.includes(origin) || origin.startsWith('http://localhost:')) {
+    
+    const isVercel = origin.endsWith('.vercel.app');
+    const isLocal = origin.startsWith('http://localhost:');
+
+    if (allowedOrigins.includes(origin) || isLocal || isVercel) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
