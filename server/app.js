@@ -28,8 +28,16 @@ app.use(cors({
     // allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:5176'];
-    if (allowedOrigins.indexOf(origin) !== -1 || origin.startsWith('http://localhost:')) {
+    const allowedOrigins = [
+      'http://localhost:5173', 
+      'http://localhost:5174', 
+      'http://localhost:5175', 
+      'http://localhost:5176',
+      'https://flipkart-clone-sigma-six.vercel.app',
+      'https://flipkart-clone-git-main-narayana-murthys-projects-2c6ee666b.vercel.app',
+      'https://flipkart-clone-ih0jeqbtt-narayana-murthys-projects-2c6ee666b.vercel.app'
+    ];
+    if (allowedOrigins.includes(origin) || origin.startsWith('http://localhost:')) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
